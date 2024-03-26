@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://crg7peye50582"]
+
+[ext_resource type="Script" path="res://assets/scripts/node2dreferencesshotgun.gd" id="1_ahybe"]
+[ext_resource type="Script" path="res://assets/scripts/shotgunbullet.gd" id="1_i3e1i"]
+[ext_resource type="Texture2D" uid="uid://bfgnss4agr7cq" path="res://assets/shotgunsheel.png" id="2_yru2v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0mvw"]
+size = Vector2(14, 15)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ahybe")
+
+[node name="shot1" type="Area2D" parent="."]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_i3e1i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shot1"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_a0mvw")
+
+[node name="Sprite2D" type="Sprite2D" parent="shot1"]
+texture_filter = 1
+texture = ExtResource("2_yru2v")
+
+[node name="shot2" type="Area2D" parent="."]
+position = Vector2(-2, 0)
+rotation = -0.610292
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_i3e1i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shot2"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_a0mvw")
+
+[node name="Sprite2D" type="Sprite2D" parent="shot2"]
+texture_filter = 1
+texture = ExtResource("2_yru2v")
+
+[node name="shot3" type="Area2D" parent="."]
+position = Vector2(2, 0)
+rotation = 0.529575
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_i3e1i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shot3"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_a0mvw")
+
+[node name="Sprite2D" type="Sprite2D" parent="shot3"]
+texture_filter = 1
+texture = ExtResource("2_yru2v")
