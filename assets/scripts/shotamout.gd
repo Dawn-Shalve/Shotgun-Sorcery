@@ -24,5 +24,5 @@ func _input(event):
 func reload():
 	audio.stream = load("res://assets/soundfx/shotgun.mp3")
 	audio.play()
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(4).timeout
 	Global.shots = 3
