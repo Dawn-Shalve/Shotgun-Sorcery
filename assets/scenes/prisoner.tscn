@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1w0d6kp363kn"]
+
+[ext_resource type="SpriteFrames" uid="uid://b8fhs7ksc08nw" path="res://assets/imagesandtiles/player.tres" id="1_flvia"]
+[ext_resource type="Script" path="res://assets/scripts/prisoner.gd" id="1_v0dxe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_621lu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_clccd"]
+radius = 168.582
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sjgv3"]
+radius = 31.0644
+
+[node name="prisoner" type="CharacterBody2D" groups=["prison"]]
+script = ExtResource("1_v0dxe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_flvia")
+animation = &"downidle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_621lu")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="." groups=["prison"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_clccd")
+
+[node name="Area2D2" type="Area2D" parent="." groups=["prison"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("RectangleShape2D_621lu")
+
+[node name="fightradius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fightradius"]
+shape = SubResource("CircleShape2D_sjgv3")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="fightradius" to="." method="_on_fightradius_body_entered"]

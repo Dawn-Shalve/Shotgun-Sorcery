@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3y2upkqhg0xf"]
+
+[ext_resource type="Script" path="res://assets/scenes/room.gd" id="1_avmep"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvtuj"]
+
+[node name="Room" type="RigidBody2D"]
+lock_rotation = true
+continuous_cd = 2
+script = ExtResource("1_avmep")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tvtuj")

@@ -1,0 +1,410 @@
+[gd_scene load_steps=17 format=3 uid="uid://i6v3l8qug6xb"]
+
+[ext_resource type="Texture2D" uid="uid://xqubs63ybsux" path="res://assets/imagesandtiles/sword.png" id="1_h15y7"]
+[ext_resource type="Script" path="res://enemies/scripts/sword.gd" id="1_ys3vb"]
+[ext_resource type="Script" path="res://enemies/actualsword.gd" id="2_1473w"]
+[ext_resource type="Texture2D" uid="uid://dcdxmgfx5bdj4" path="res://assets/imagesandtiles/RACK.png" id="2_pyy1q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dpat"]
+size = Vector2(37, 33)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o7ur4"]
+radius = 79.0063
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdovf"]
+size = Vector2(28.837, 8.05368)
+
+[sub_resource type="Animation" id="Animation_giqx6"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Sword/sword:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Sword/sword:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sword/swordcollision:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-2.43426, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Sword/swordcollision:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.97074, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Sword2:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Sword2:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(11, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Sword2:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_jfpug"]
+resource_name = "exitrack"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.5708, -0.25, 0, 0.25, 0, 0.523599, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-3, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0, -5, -0.25, 0, 0.25, 0, 11, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Sword2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.5708, -0.25, 0, 0.25, 0, 0.523599, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Sword2:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(11, -0.25, 0, 0.25, 0, 11, -0.25, 0, 0.25, 0, 13, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sword2:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0, -7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="Animation" id="Animation_k64a5"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sword/sword:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.0171034, -0.25, 0, 0.25, 0, -1.58982, -0.25, 0, 0.25, 0, 0.0171034, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Sword/sword:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.0269639, -0.25, 0, 0.25, 0, -2.50638, -0.25, 0, 0.25, 0, 0.0269639, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Sword/swordcollision:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-1.36298, -0.25, 0, 0.25, 0, -2.43426, -0.25, 0, 0.25, 0, 0.0171034, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 1)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sword/swordcollision:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-0.281843, -0.25, 0, 0.25, 0, -1.97074, -0.25, 0, 0.25, 0, 0.0269637, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 1)
+}
+
+[sub_resource type="Animation" id="Animation_sq2ry"]
+resource_name = "inrack"
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_cjupj"]
+resource_name = "windupandslash"
+length = 20.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.392699, -0.25, 0, 0.25, 0, 0.392699, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.7, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_72roc"]
+_data = {
+"RESET": SubResource("Animation_giqx6"),
+"exitrack": SubResource("Animation_jfpug"),
+"idle": SubResource("Animation_k64a5"),
+"inrack": SubResource("Animation_sq2ry"),
+"windupandslash": SubResource("Animation_cjupj")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pwlvm"]
+radius = 78.5175
+
+[sub_resource type="Gradient" id="Gradient_ukxye"]
+colors = PackedColorArray(0.694118, 0.384314, 0, 1, 0.555719, 0.341143, 0.0689465, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4oh2u"]
+gradient = SubResource("Gradient_ukxye")
+width = 1
+height = 1
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.461165, 0.461165)
+
+[node name="sword" type="Node2D"]
+
+[node name="Rack" type="StaticBody2D" parent="."]
+collision_layer = 9
+collision_mask = 9
+script = ExtResource("1_ys3vb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rack"]
+light_mask = 31
+visibility_layer = 31
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_1dpat")
+
+[node name="racksprite" type="Sprite2D" parent="Rack"]
+texture = ExtResource("2_pyy1q")
+
+[node name="swordradius" type="Area2D" parent="Rack" groups=["bigrack"]]
+
+[node name="swordfindradius" type="CollisionShape2D" parent="Rack/swordradius"]
+shape = SubResource("CircleShape2D_o7ur4")
+
+[node name="Sword" type="CharacterBody2D" parent="." groups=["deflectable"]]
+script = ExtResource("2_1473w")
+
+[node name="sword" type="Sprite2D" parent="Sword"]
+texture = ExtResource("1_h15y7")
+
+[node name="Node2D" type="Node2D" parent="Sword/sword"]
+position = Vector2(12.9829, 0.00023222)
+
+[node name="swordcollision" type="CollisionShape2D" parent="Sword"]
+position = Vector2(-2.43426, -1.97074)
+shape = SubResource("RectangleShape2D_xdovf")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sword"]
+libraries = {
+"": SubResource("AnimationLibrary_72roc")
+}
+
+[node name="Area2D" type="Area2D" parent="Sword"]
+position = Vector2(-5.3393, -8.4175)
+rotation = -0.565265
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword/Area2D"]
+position = Vector2(-4.76837e-07, 10)
+shape = SubResource("CircleShape2D_pwlvm")
+
+[node name="Sword2" type="CharacterBody2D" parent="." groups=["deflectable"]]
+position = Vector2(11, -1)
+script = ExtResource("2_1473w")
+
+[node name="sword" type="Sprite2D" parent="Sword2"]
+texture = ExtResource("1_h15y7")
+
+[node name="Node2D" type="Node2D" parent="Sword2/sword"]
+position = Vector2(12.9829, 0.00023222)
+
+[node name="swordcollision" type="CollisionShape2D" parent="Sword2"]
+position = Vector2(-2.43426, -1.97074)
+shape = SubResource("RectangleShape2D_xdovf")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="Sword2"]
+position = Vector2(-5.3393, -8.4175)
+rotation = -0.565265
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword2/Area2D"]
+position = Vector2(-4.76837e-07, 10)
+shape = SubResource("CircleShape2D_pwlvm")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+explosiveness = 0.55
+texture = SubResource("GradientTexture2D_4oh2u")
+emission_shape = 1
+emission_sphere_radius = 25.56
+particle_flag_align_y = true
+spread = 52.27
+orbit_velocity_max = 8.0
+
+[connection signal="area_entered" from="Rack/swordradius" to="Rack" method="_on_swordradius_area_entered"]
+[connection signal="body_entered" from="Rack/swordradius" to="Rack" method="_on_swordradius_body_entered"]
+[connection signal="area_entered" from="Sword/Area2D" to="Sword" method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Sword/Area2D" to="Sword" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Sword/Area2D" to="Sword" method="_on_area_2d_body_exited"]
+[connection signal="area_entered" from="Sword2/Area2D" to="Sword2" method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Sword2/Area2D" to="Sword2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Sword2/Area2D" to="Sword2" method="_on_area_2d_body_exited"]

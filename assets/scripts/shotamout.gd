@@ -1,8 +1,5 @@
 extends Control
 @onready var audio = $"../../AudioStreamPlayer2D"
-@onready var shot1 = $HBoxContainer/TextureRect
-@onready var shot2 = $HBoxContainer/TextureRect2
-@onready var shot3 = $HBoxContainer/TextureRect3
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -19,6 +16,7 @@ func _input(event):
 		print(Global.shots)
 		if Global.shots == 0:
 			reload()
+			Global.shotgunreload.emit()
 
 
 func reload():
@@ -26,3 +24,5 @@ func reload():
 	audio.play()
 	await get_tree().create_timer(4).timeout
 	Global.shots = 3
+	Global.shotgunreload.emit()
+	Global.shotgunshot.emit()

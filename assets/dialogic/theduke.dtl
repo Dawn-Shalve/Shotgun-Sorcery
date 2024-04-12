@@ -1,0 +1,6 @@
+join theduke 1
+[style name="stylething"]
+theduke: How did you get here.
+theduke: The guards should of escorted you back to your cell.
+theduke: All right. I'll do it myself
+return

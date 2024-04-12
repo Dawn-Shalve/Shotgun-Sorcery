@@ -1,42 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjqp6dooimrol"]
+[gd_scene load_steps=6 format=3 uid="uid://cjqp6dooimrol"]
 
-[ext_resource type="Texture2D" uid="uid://c2p1v0pt5a53a" path="res://assets/campfire-Recovered1.png" id="1_bsq81"]
 [ext_resource type="Script" path="res://assets/scenes/litnt.gd" id="1_q03q1"]
-[ext_resource type="Texture2D" uid="uid://b7tajytjhj230" path="res://assets/campfire-Recovered2.png" id="2_0egf2"]
-[ext_resource type="Texture2D" uid="uid://bawdom0s8kvd3" path="res://assets/campfire-Recovered3.png" id="3_rpg7e"]
-[ext_resource type="Texture2D" uid="uid://pc5q3rx1mnwg" path="res://assets/campfire-Recovered4.png" id="4_d5b52"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6ho6"]
 size = Vector2(16, 16)
 
-[sub_resource type="Gradient" id="Gradient_ye8sh"]
+[sub_resource type="Gradient" id="Gradient_nvwkx"]
 offsets = PackedFloat32Array(0, 0.75974)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_56rm2"]
-gradient = SubResource("Gradient_ye8sh")
+gradient = SubResource("Gradient_nvwkx")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fb33h"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_bsq81")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_0egf2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_rpg7e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_d5b52")
-}],
-"loop": true,
-"name": &"fire",
-"speed": 4.0
-}]
+[sub_resource type="CircleShape2D" id="CircleShape2D_sl8hw"]
+radius = 16.0
 
 [node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource("1_q03q1")
@@ -47,11 +26,22 @@ disabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(1, 0.882353, 0.639216, 1)
+energy = 0.14
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_56rm2")
-texture_scale = 3.35
+texture_scale = 4.0
 
-[node name="Campfire" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_fb33h")
-animation = &"fire"
-frame_progress = 0.940533
-speed_scale = 2.0
+[node name="Area2D" type="Area2D" parent="." groups=["lights"]]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_m6ho6")
+disabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_sl8hw")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

@@ -1,0 +1,6 @@
+join Uncleterry 1
+Uncleterry (Main): Welcome to my shop! I got some deals for you kid!
+- Response1 [if "{}" == ""]
+- Response1 [if "{}" == ""]
+Uncleterry: Well, I got some deals for you kid.
+[end_timeline]

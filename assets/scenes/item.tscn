@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://mwd1c0r6rrmx"]
+
+[ext_resource type="Script" path="res://assets/scripts/item.gd" id="1_4beih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6wqd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j2y30"]
+radius = 16.0312
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_4beih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a6wqd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["item"]]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_j2y30")
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 13.0
+offset_bottom = 27.0
+scale = Vector2(0.402443, 0.268381)
+text = "E"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

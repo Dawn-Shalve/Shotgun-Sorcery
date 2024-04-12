@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/scripts/node2dreferencesshotgun.gd" id="1_ahybe"]
 [ext_resource type="Script" path="res://assets/scripts/shotgunbullet.gd" id="1_i3e1i"]
-[ext_resource type="Texture2D" uid="uid://bfgnss4agr7cq" path="res://assets/shotgunsheel.png" id="2_yru2v"]
+[ext_resource type="Texture2D" uid="uid://bfgnss4agr7cq" path="res://assets/imagesandtiles/shotgunsheel.png" id="2_yru2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0mvw"]
 size = Vector2(14, 15)
@@ -19,7 +19,7 @@ fill_from = Vector2(0.5, 0.5)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ahybe")
 
-[node name="shot1" type="Area2D" parent="."]
+[node name="shot1" type="Area2D" parent="." groups=["bullet"]]
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_i3e1i")
 
@@ -38,7 +38,7 @@ color = Color(0.592157, 0.827451, 1, 1)
 texture = SubResource("GradientTexture2D_illn0")
 texture_scale = 3.0
 
-[node name="shot2" type="Area2D" parent="."]
+[node name="shot2" type="Area2D" parent="." groups=["bullet"]]
 position = Vector2(-2, 0)
 rotation = -0.610292
 scale = Vector2(0.1, 0.1)
@@ -59,7 +59,7 @@ color = Color(0.592157, 0.827451, 1, 1)
 texture = SubResource("GradientTexture2D_illn0")
 texture_scale = 3.0
 
-[node name="shot3" type="Area2D" parent="."]
+[node name="shot3" type="Area2D" parent="." groups=["bullet"]]
 position = Vector2(2, 0)
 rotation = 0.529575
 scale = Vector2(0.1, 0.1)

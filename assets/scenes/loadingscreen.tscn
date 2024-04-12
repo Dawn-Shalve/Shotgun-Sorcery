@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctsvhva42bigy"]
+
+[ext_resource type="Script" path="res://assets/scripts/loadingscreen.gd" id="1_6414s"]
+[ext_resource type="Texture2D" uid="uid://calajgtd1awrt" path="res://assets/imagesandtiles/storybg.png" id="2_k0yjv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22b04"]
+atlas = ExtResource("2_k0yjv")
+region = Rect2(0, 0, 1920, 1440)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_efaws"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22b04")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_6414s")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(577, 324.5)
+scale = Vector2(0.602083, 0.449306)
+sprite_frames = SubResource("SpriteFrames_efaws")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/AnimatedSprite2D"]
+offset_left = -210.934
+offset_top = -188.068
+offset_right = 974.066
+offset_bottom = 136.932
+scale = Vector2(1.51562, 2.49481)
+theme_override_font_sizes/normal_font_size = 64
+text = "Loading"

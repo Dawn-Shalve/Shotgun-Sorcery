@@ -18,6 +18,7 @@ func _input(event):
 		var mouse = get_global_mouse_position()
 		look_at(mouse)
 	if event.is_action_pressed("shoot") and Global.menu == false and Global.shots != 0:
+		Global.shotgunshot.emit()
 		var bullet = load("res://assets/scenes/shotgunbullet.tscn").instantiate()
 		owner.owner.add_child(bullet)
 		bullet.shot1.transform = muzzle.global_transform

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://drahax3b5n65n"]
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+amount = 10
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 52.2
+initial_velocity_max = 100.0
+orbit_velocity_min = -10.0
+orbit_velocity_max = 10.0

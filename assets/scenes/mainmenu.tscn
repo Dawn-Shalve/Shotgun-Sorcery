@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1c1diasly6y4"]
+
+[ext_resource type="Texture2D" uid="uid://calajgtd1awrt" path="res://assets/imagesandtiles/storybg.png" id="1_653vc"]
+[ext_resource type="Script" path="res://assets/scripts/mainmenu.gd" id="1_t6yb2"]
+[ext_resource type="Texture2D" uid="uid://c72x1rctg8kdq" path="res://assets/imagesandtiles/playbutton.png" id="2_x7f34"]
+[ext_resource type="Texture2D" uid="uid://c6vgmgxwro2gq" path="res://assets/imagesandtiles/optionsbutton.png" id="3_n80lm"]
+[ext_resource type="Texture2D" uid="uid://bm74pwj7nxwv8" path="res://assets/imagesandtiles/exit.png" id="4_7vufp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22b04"]
+atlas = ExtResource("1_653vc")
+region = Rect2(0, 0, 1920, 1440)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rcnmm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22b04")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_t6yb2")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(577, 324.5)
+scale = Vector2(0.602083, 0.449306)
+sprite_frames = SubResource("SpriteFrames_rcnmm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 40.0
+offset_top = 133.0
+offset_right = 134.0
+offset_bottom = 235.0
+scale = Vector2(5.16162, 4.65734)
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_x7f34")
+
+[node name="TextureButton2" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("3_n80lm")
+
+[node name="TextureButton3" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("4_7vufp")
+
+[connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/TextureButton3" to="." method="_on_texture_button_3_pressed"]
